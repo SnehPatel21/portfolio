@@ -1,0 +1,194 @@
+/* Hero Section Base */
+@font-face {
+    font-family: 'ISOCTEUR';
+    font-style: normal;
+    font-weight: normal;
+    src: local('ISOCTEUR'), url('../fonts/ISOCTEUR.woff') format('woff');
+  }
+
+.heroSection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/Mesh\ gradient.png'); /* Correct path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Ensure background stretches beyond the view */
+  }
+  
+  /* Ellipse 1 - Top Left */
+  .ellipse1 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 15%;
+    z-index: 1;
+  }
+  
+  /* Rectangle 1 - Base for Hero Section */
+  .rectangle1 {
+    position: relative;
+    width: 80%; /* This will act as the base rectangle */
+    max-width: 1400px;
+    padding: 40px;
+    background: linear-gradient(to bottom, rgba(217, 217, 217, 0.67) 0%, rgba(217, 217, 217, 0.33) 100%);
+    border-radius: 10px;
+    z-index: 2; /* Above ellipses */
+    margin: 0 auto; /* Center horizontally */
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    overflow: visible; /* To allow the second rectangle and elements inside to overflow */
+  }
+  
+  /* Ellipse 2 - Positioned under Rectangle 1 */
+  .ellipse2 {
+    position: absolute;
+    bottom: 10%;
+    right: 45%;
+    width: 10%;
+    z-index: 1;
+  }
+  
+  /* Right Rectangle for the Hero Image and Menu (on top of Rectangle 1) */
+  .rightRectangle {
+    width: 45%;
+    padding: 30px;
+    background-color: rgba(245, 245, 220, 0.7); /* Light beige color */
+    border-radius: 10px;
+    z-index: 3; /* On top of Rectangle 1 */
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hero Content Styling (on top of Rectangle 1) */
+  .heroContent {
+    width: 45%;
+    padding: 0 10px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'ISOCTEUR', sans-serif;
+    color: #000;
+  }
+  
+  .tagline {
+    font-size: 2.7rem;
+    font-family: 'ISOCTEUR', sans-serif;
+    margin-bottom: 20px;
+    color: #000;
+  }
+  
+  .subText {
+    font-size: 1.2rem;
+    font-family: 'ISOCTEUR', sans-serif;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  
+  .ctaButton {
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, rgba(245, 245, 220, 0.6) 0%, rgba(252, 224, 169, 0.4) 100%);
+    font-family: 'ISOCTEUR', sans-serif;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    /* Add shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ctaButton:hover {
+    background-color: rgba(245, 245, 220, 0.6);
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .menu a {
+    font-size: 1rem;
+    color: #000;
+    margin: 0 10px;
+    text-decoration: none;
+    font-family: 'ISOCTEUR', sans-serif;
+    transition: color 0.3s ease;
+  }
+  
+  .menu a:hover {
+    color: #9d3ffb;
+  }
+  
+  .heroImage {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    /* Add shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .rectangle1 {
+      flex-direction: column;
+    }
+  
+    .rightRectangle {
+      width: 100%;
+      margin: 20px 0;
+    }
+  
+    .heroContent {
+      width: 100%;
+      margin: 20px 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .heroImage {
+      max-width: 300px;
+    }
+  
+    .tagline {
+      font-size: 1.5rem;
+    }
+  
+    .logo {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heroContent,
+    .rightRectangle {
+      width: 100%;
+    }
+  
+    .ctaButton {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  

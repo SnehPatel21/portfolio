@@ -1,0 +1,124 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'ISOCTEUR';
+    font-style: normal;
+    font-weight: normal;
+    src: local('ISOCTEUR'), url('../fonts/ISOCTEUR.woff') format('woff');
+  }
+  
+  body {
+    font-family: 'ISOCTEUR', sans-serif;
+    background-image: url('/src/assets/Mesh gradient.png');
+    color: #FFFFFF; /* Light text color */
+    margin: 0;
+    padding: 0;
+    font-size: 16px; /* Adjust this based on Figma */
+    line-height: 1.5;
+  }
+  
+  h1, h2, h3, p {
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+}
+
+  /* About Section */
+.about-section {
+    padding: 50px 0;
+    background-color: #111111;
+    text-align: center;
+  }
+  
+  .about-section h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+  }
+  
+  .about-section p {
+    font-size: 1.2rem;
+    color: #d0d0d0;
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  @media (max-width: 768px) {
+    .about-section h2 {
+      font-size: 2rem;
+    }
+  
+    .about-section p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Projects Section */
+.projects-section {
+    padding: 50px 0;
+    background-color: #1a1a1a;
+    text-align: center;
+  }
+  
+  .projects-section h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .project-card {
+    padding: 20px;
+    background-color: #222222;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .project-card h3 {
+    font-size: 1.5rem;
+    color: #ff007f;
+  }
+  
+  .project-card p {
+    color: #d0d0d0;
+  }
+  
+  .project-card a {
+    color: #ff007f;
+    text-decoration: underline;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
