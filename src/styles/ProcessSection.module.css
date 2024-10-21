@@ -1,0 +1,50 @@
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 3rem;
+  }
+  
+  .cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .card {
+    background: linear-gradient(to bottom, rgba(217, 217, 217, 0.67) 0%, rgba(217, 217, 217, 0.33) 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: left;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .cardTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: #000;
+  }
+  
+  .cardText {
+    font-size: 1rem;
+    color: #000;
+    margin-top: 0.5rem;
+  }
+  
+  .icon {
+    font-size: 2rem;
+    color: #000;
+  }
+  

@@ -1,16 +1,16 @@
-import '../app/globals.css';
+// src/app/layout.js
+
+import '../styles/global.css'; // Ensure the path is correct
 
 export const metadata = {
-  title: 'Portfolio - Home',
-  description: 'Personal portfolio showcasing projects and skills',
+  title: 'Sneh Patel Portfolio',
+  description: 'Showcasing projects and skills',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

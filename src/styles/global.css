@@ -14,8 +14,10 @@
   
   body {
     font-family: 'ISOCTEUR', sans-serif;
-    background-image: url('/src/assets/Mesh gradient.png');
-    color: #FFFFFF; /* Light text color */
+    background-image: url('../assets/Mesh\ gradient.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     font-size: 16px; /* Adjust this based on Figma */
@@ -76,7 +78,7 @@
   /* Projects Section */
 .projects-section {
     padding: 50px 0;
-    background-color: #1a1a1a;
+    background-color: #fbfbfb;
     text-align: center;
   }
   
