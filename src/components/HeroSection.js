@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import styles from '../styles/HeroSection.module.css';
-import ellipse1 from '../assets/Ellipse 1.png'; // Update with the correct path
-import ellipse2 from '../assets/Ellipse 2.png';
-import heroImage from '../assets/cat.jpeg'; // Update with your image
+import ellipse1 from '/public/assets/Ellipse 1.png'; // Update with the correct path
+import ellipse2 from '/public/assets/Ellipse 2.png';
+import heroImage from '/public/assets/cat.jpeg'; // Update with your image
 
 const HeroSection = () => {
     return (

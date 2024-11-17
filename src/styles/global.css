@@ -9,12 +9,12 @@
     font-family: 'ISOCTEUR';
     font-style: normal;
     font-weight: normal;
-    src: local('ISOCTEUR'), url('../fonts/ISOCTEUR.woff') format('woff');
+    src: local('ISOCTEUR'), url('/fonts/ISOCTEUR.woff') format('woff');
   }
   
   body {
     font-family: 'ISOCTEUR', sans-serif;
-    background-image: url('../assets/Mesh\ gradient.png');
+    background-image: url('/assets/Mesh\ gradient.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
