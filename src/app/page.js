@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ProcessSection />
-      {/* <ProjectsSection /> */}
+      <ProjectsSection />
       <SkillsSection />
       <JourneySection/>
       <ContactSection/>

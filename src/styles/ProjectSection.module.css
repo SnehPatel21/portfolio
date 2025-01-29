@@ -1,0 +1,130 @@
+.projectsSection {
+    width: 100%;
+    padding: 4rem 2rem;
+    position: relative;
+    font-family: 'ISOCTEUR', monospace;
+  }
+  
+  .sparkleContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .sparkleTop {
+    position: absolute;
+    top: 0rem;
+    left: 15%;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .sparkleRight {
+    position: absolute;
+    top: 2rem;
+    right: 18%;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .sparkleLeft {
+    position: absolute;
+    top: 8rem;
+    left: 16%;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .heading {
+    text-align: center;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 4rem;
+    line-height: 1.3;
+  }
+  
+  .projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .projectCard {
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.67) 0%, rgba(217, 217, 217, 0.33) 100%);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 100%;
+  }
+  
+  .projectCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .imageContainer {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+  
+  .projectImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .projectCard:hover .projectImage {
+    transform: scale(1.05);
+  }
+  
+  .projectContent {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .projectTitle {
+    font-size: 1.2rem;
+    color: #000;
+    margin: 0 0 1rem 0;
+    font-weight: 400;
+  }
+  
+  .projectDescription {
+    font-size: 0.9rem;
+    color: #000;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .projectsSection {
+      padding: 3rem 1rem;
+    }
+  
+    .projectsGrid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+  
+    .sparkleTop,
+    .sparkleRight,
+    .sparkleLeft {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heading {
+      font-size: 1.5rem;
+    }
+  
+    .projectCard {
+      max-width: 100%;
+    }
+  }
