@@ -1,195 +1,208 @@
-/* Hero Section Base */
-@font-face {
-    font-family: 'ISOCTEUR';
-    font-style: normal;
-    font-weight: normal;
-    src: local('ISOCTEUR'), url('/fonts/ISOCTEUR.woff') format('woff');
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+  /* Removed the background gradient */
+}
+
+/* Background Elements */
+.backgroundElements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ellipse1Wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  aspect-ratio: 1;
+}
+
+.ellipse2Wrapper {
+  position: absolute;
+  bottom: 10%;
+  right: 45%;
+  width: 15%;
+  aspect-ratio: 1;
+}
+
+.ellipse1, .ellipse2 {
+  object-fit: contain;
+}
+
+/* Main Container */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  gap: 4rem;
+  padding: 3rem;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(217, 217, 217, 0.67) 0%, rgba(217, 217, 217, 0.33) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+}
+
+/* Right Content */
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 500px;
+  background: rgba(245, 245, 220, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 2rem;
+  border-radius: 16px;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+.nav a {
+  color: #000;
+  text-decoration: none;
+  font-family: 'ISOCTEUR', sans-serif;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #9d3ffb;
+}
+
+/* Image Container */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+/* Left Content */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-family: 'ISOCTEUR', sans-serif;
+  color: #000;
+}
+
+.tagline {
+  font-size: clamp(2rem, 5vw, 2.7rem);
+  font-family: 'ISOCTEUR', sans-serif;
+  line-height: 1.2;
+  color: #000;
+}
+
+.subText {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-family: 'ISOCTEUR', sans-serif;
+  color: #000;
+}
+
+/* CTA Button */
+.ctaButton {
+  align-self: flex-start;
+  padding: 1rem 2rem;
+  font-family: 'ISOCTEUR', sans-serif;
+  font-size: 1rem;
+  color: #000;
+  background: linear-gradient(to bottom, rgba(245, 245, 220, 0.6) 0%, rgba(252, 224, 169, 0.4) 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
   }
 
-.heroSection {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .content, .sidebar {
+    max-width: 100%;
+  }
+
+  .ellipse1Wrapper {
+    width: 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
     justify-content: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    width: 100vw;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow: hidden; /* Ensure background stretches beyond the view */
+    gap: 1rem;
   }
-  
-  /* Ellipse 1 - Top Left */
-  .ellipse1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: auto; /* Fixed width */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 1;
+
+  .nav a {
+    padding: 0.5rem;
   }
-  
-  /* Rectangle 1 - Base for Hero Section */
-  .rectangle1 {
-    position: relative;
-    width: 80%; /* This will act as the base rectangle */
-    max-width: 1400px;
-    padding: 40px;
-    background: linear-gradient(to bottom, rgba(217, 217, 217, 0.67) 0%, rgba(217, 217, 217, 0.33) 100%);
-    border-radius: 10px;
-    z-index: 2; /* Above ellipses */
-    margin: 0 auto; /* Center horizontally */
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    overflow: visible; /* To allow the second rectangle and elements inside to overflow */
+
+  .imageWrapper {
+    aspect-ratio: 16/9;
   }
-  
-  /* Ellipse 2 - Positioned under Rectangle 1 */
-  .ellipse2 {
-    position: absolute;
-    bottom: 10%;
-    right: 45%;
-    width: auto; /* Fixed width */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 1;
+
+  .ellipse1Wrapper {
+    width: 50%;
   }
-  
-  /* Right Rectangle for the Hero Image and Menu (on top of Rectangle 1) */
-  .rightRectangle {
-    width: 45%;
-    padding: 30px;
-    background-color: rgba(245, 245, 220, 0.7); /* Light beige color */
-    border-radius: 10px;
-    z-index: 3; /* On top of Rectangle 1 */
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .ellipse2Wrapper {
+    width: 25%;
   }
-  
-  /* Hero Content Styling (on top of Rectangle 1) */
-  .heroContent {
-    width: 45%;
-    padding: 0 10px;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
   }
-  
-  .logo {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-family: 'ISOCTEUR', sans-serif;
-    color: #000;
-  }
-  
-  .tagline {
-    font-size: 2.7rem;
-    font-family: 'ISOCTEUR', sans-serif;
-    margin-bottom: 20px;
-    color: #000;
-  }
-  
-  .subText {
-    font-size: 1.2rem;
-    font-family: 'ISOCTEUR', sans-serif;
-    color: #000;
-    margin-bottom: 20px;
-  }
-  
+
   .ctaButton {
-    padding: 10px 20px;
-    background: linear-gradient(to bottom, rgba(245, 245, 220, 0.6) 0%, rgba(252, 224, 169, 0.4) 100%);
-    font-family: 'ISOCTEUR', sans-serif;
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    /* Add shadow */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .ctaButton:hover {
-    background-color: rgba(245, 245, 220, 0.6);
-  }
-  
-  .menu {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .menu a {
-    font-size: 1rem;
-    color: #000;
-    margin: 0 10px;
-    text-decoration: none;
-    font-family: 'ISOCTEUR', sans-serif;
-    transition: color 0.3s ease;
-  }
-  
-  .menu a:hover {
-    color: #9d3ffb;
-  }
-  
-  .heroImage {
     width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto;
-    /* Add shadow */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem;
   }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 1024px) {
-    .rectangle1 {
-      flex-direction: column;
-    }
-  
-    .rightRectangle {
-      width: 100%;
-      margin: 20px 0;
-    }
-  
-    .heroContent {
-      width: 100%;
-      margin: 20px 0;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .heroImage {
-      max-width: 300px;
-    }
-  
-    .tagline {
-      font-size: 1.5rem;
-    }
-  
-    .logo {
-      font-size: 1.5rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .heroContent,
-    .rightRectangle {
-      width: 100%;
-    }
-  
-    .ctaButton {
-      font-size: 0.9rem;
-      padding: 8px 16px;
-    }
-  }
-  
+}

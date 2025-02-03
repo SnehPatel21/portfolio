@@ -1,40 +1,72 @@
-import Image from 'next/image';
 import styles from '../styles/HeroSection.module.css';
-import ellipse1 from '/public/assets/Ellipse 1.png'; // Update with the correct path
+import Image from 'next/image';
+import ellipse1 from '/public/assets/Ellipse 1.png';
 import ellipse2 from '/public/assets/Ellipse 2.png';
-import heroImage from '/public/assets/cat.jpeg'; // Update with your image
+import heroImage from '/public/assets/cat.jpeg';
 
 const HeroSection = () => {
-    return (
-      <section className={styles.heroSection}>
-        {/* Ellipse 1 and Mesh Gradient in the Background */}
-        <Image src={ellipse1} alt="Ellipse 1" className={styles.ellipse1} />
-        <Image src={ellipse2} alt="Ellipse 2" className={styles.ellipse2} />
-  
-        {/* Hero Section Base */}
-        <div className={styles.rectangle1}>
-          {/* Left Section (Text and Button) */}
-          <div className={styles.heroContent}>
-            <h1 className={styles.logo}>&lt;/Scorpion&gt;</h1>
-            <p className={styles.subText}>Welcome to &lt;/scorpion&gt;</p>
-            <h2 className={styles.tagline}>We are destined for success in the business world</h2>
-            <p className={styles.subText}>Know more about us by clicking below</p>
-            <button className={styles.ctaButton}>Get Started</button>
-          </div>
-  
-          {/* Right Section (Menu and Hero Image) */}
-          <div className={styles.rightRectangle}>
-            <nav className={styles.menu}>
-              <a href="#">About</a>
-              <a href="#">Portfolio</a>
-              <a href="#">Services</a>
-              <a href="#">Contact</a>
-            </nav>
-            <Image src={heroImage} alt="Hero Image" className={styles.heroImage} />
+  return (
+    <section className={styles.heroSection}>
+      {/* Background Elements - Now properly positioned */}
+      <div className={styles.backgroundElements}>
+        <div className={styles.ellipse1Wrapper}>
+          <Image 
+            src={ellipse1} 
+            alt=""
+            className={styles.ellipse1}
+            priority
+            fill
+          />
+        </div>
+        <div className={styles.ellipse2Wrapper}>
+          <Image 
+            src={ellipse2} 
+            alt=""
+            className={styles.ellipse2}
+            fill
+          />
+        </div>
+      </div>
+
+      {/* Main Content Container */}
+      <div className={styles.container}>
+        {/* Left Content */}
+        <div className={styles.content}>
+          <h1 className={styles.logo}>&lt;/Scorpion&gt;</h1>
+          <p className={styles.subText}>Welcome to &lt;/scorpion&gt;</p>
+          <h2 className={styles.tagline}>
+            We are destined<br />
+            for success in the<br />
+            business world
+          </h2>
+          <p className={styles.subText}>Know more about us by clicking below</p>
+          <button className={styles.ctaButton}>Get Started</button>
+        </div>
+
+        {/* Right Content */}
+        <div className={styles.sidebar}>
+          {/* Navigation */}
+          <nav className={styles.nav}>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          
+          {/* Image Container */}
+          <div className={styles.imageWrapper}>
+            <Image 
+              src={heroImage} 
+              alt="Hero illustration"
+              className={styles.heroImage}
+              priority
+              fill
+            />
           </div>
         </div>
-      </section>
-    );
-  };
-  
-  export default HeroSection;
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;

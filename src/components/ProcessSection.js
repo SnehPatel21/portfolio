@@ -1,8 +1,10 @@
 import styles from '../styles/ProcessSection.module.css';
+import { SectionWrapper } from '../layout/SectionWrapper';
 import { FaPen, FaCode, FaRocket, FaClipboardList } from 'react-icons/fa'; // Icons for visuals
 
 const ProcessSection = () => {
   return (
+    <SectionWrapper>
     <section className={styles.section}>
       <h2 className={styles.heading}>Our Development Process</h2>
       <div className={styles.cardsContainer}>
@@ -43,6 +45,7 @@ const ProcessSection = () => {
         </div>
       </div>
     </section>
+    </SectionWrapper>
   );
 };
 

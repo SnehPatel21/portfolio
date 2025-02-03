@@ -1,7 +1,9 @@
 import styles from '../styles/SkillsSection.module.css';
+import { SectionWrapper } from '../layout/SectionWrapper';
 
 const SkillsSection = () => {
   return (
+    <SectionWrapper>
     <section className={styles.skillsSection}>
       <div className={styles.mainContainer}>
         <div className={styles.headerContainer}>
@@ -58,6 +60,7 @@ const SkillsSection = () => {
         </div>
       </div>
     </section>
+    </SectionWrapper>
   );
 };
 

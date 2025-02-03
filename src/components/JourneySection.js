@@ -1,7 +1,9 @@
 import styles from '../styles/JourneySection.module.css';
+import { SectionWrapper } from '../layout/SectionWrapper';
 
 const JourneySection = () => {
   return (
+    <SectionWrapper>
     <section className={styles.journeySection}>
       <div className={styles.headingContainer}>
         <h2 className={styles.heading}>
@@ -51,6 +53,7 @@ const JourneySection = () => {
         </div>
       </div>
     </section>
+    </SectionWrapper>
   );
 };
 

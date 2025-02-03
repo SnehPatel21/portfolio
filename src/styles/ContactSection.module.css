@@ -4,17 +4,6 @@
     font-family: 'ISOCTEUR', monospace;
   }
   
-  .mainContainer {
-    background: linear-gradient(180deg, rgba(217, 217, 217, 0.67) 0%, rgba(217, 217, 217, 0.33) 100%);
-    border-radius: 10px;
-    padding: 4rem 3rem;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
   .contentWrapper {
     display: flex;
     justify-content: space-between;

@@ -1,7 +1,9 @@
 import styles from '../styles/ContactSection.module.css';
+import { SectionWrapper } from '../layout/SectionWrapper';
 
 const ContactSection = () => {
   return (
+    <SectionWrapper>
     <section className={styles.contactSection}>
       <div className={styles.mainContainer}>
         <div className={styles.sparkleTop}>
@@ -31,6 +33,7 @@ const ContactSection = () => {
         </div>
       </div>
     </section>
+    </SectionWrapper>
   );
 };
 

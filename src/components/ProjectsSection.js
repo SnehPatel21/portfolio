@@ -1,4 +1,5 @@
 import styles from '../styles/ProjectSection.module.css';
+import { SectionWrapper } from '../layout/SectionWrapper';
 
 const ProjectsSection = () => {
   const projects = [
@@ -17,6 +18,7 @@ const ProjectsSection = () => {
   ];
 
   return (
+    <SectionWrapper>
     <section className={styles.projectsSection}>
       <div className={styles.sparkleContainer}>
         <img src="/assets/Sparkle.png" alt="" className={styles.sparkleTop} />
@@ -48,6 +50,7 @@ const ProjectsSection = () => {
         ))}
       </div>
     </section>
+    </SectionWrapper>
   );
 };
 
