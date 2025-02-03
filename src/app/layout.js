@@ -1,7 +1,7 @@
 // src/app/layout.js
 
-import '../styles/global.css'; // Ensure the path is correct
-
+import '../styles/global.css';
+import BubblesBackground from '@/components/FloatingShapesBackground';
 export const metadata = {
   title: 'Sneh Patel Portfolio',
   description: 'Showcasing projects and skills',
@@ -10,7 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <BubblesBackground />
+        <main className="relative z-10">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

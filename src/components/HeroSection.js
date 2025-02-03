@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section className={styles.heroSection}>
       {/* Background Elements - Now properly positioned */}
-      <div className={styles.backgroundElements}>
+      {/* <div className={styles.backgroundElements}>
         <div className={styles.ellipse1Wrapper}>
           <Image 
             src={ellipse1} 
@@ -26,7 +26,7 @@ const HeroSection = () => {
             fill
           />
         </div>
-      </div>
+      </div> */}
 
       {/* Main Content Container */}
       <div className={styles.container}>
