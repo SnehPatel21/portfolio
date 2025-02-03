@@ -21,16 +21,71 @@
   
   body {
     font-family: 'ISOCTEUR', sans-serif;
-    background-image: url('/assets/Mesh\ gradient.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(90deg, #8B0FF9 0%, #B818F4 100%);
+    position: relative;
     margin: 0;
     padding: 0;
-    font-size: 16px; /* Adjust this based on Figma */
+    font-size: 16px;
     line-height: 1.5;
   }
   
+/* Gujarati Kurta Pattern Overlay */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    /* Small dots at intersections */
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 1px,
+      transparent 1px
+    ),
+    /* Diagonal lines right */
+    linear-gradient(
+      45deg,
+      transparent 45%,
+      rgba(255,255,255,0.03) 45%,
+      rgba(255,255,255,0.03) 55%,
+      transparent 55%
+    ),
+    /* Diagonal lines left */
+    linear-gradient(
+      -45deg,
+      transparent 45%,
+      rgba(255,255,255,0.03) 45%,
+      rgba(255,255,255,0.03) 55%,
+      transparent 55%
+    ),
+    /* Additional subtle diamond pattern */
+    linear-gradient(
+      45deg,
+      transparent 48%,
+      rgba(255,255,255,0.01) 48%,
+      rgba(255,255,255,0.01) 52%,
+      transparent 52%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 48%,
+      rgba(255,255,255,0.01) 48%,
+      rgba(255,255,255,0.01) 52%,
+      transparent 52%
+    );
+  background-size: 
+    15px 15px,  /* Size for dots */
+    15px 15px,  /* Size for primary diagonal lines */
+    15px 15px,  /* Size for secondary diagonal lines */
+    30px 30px,  /* Size for larger diamond pattern */
+    30px 30px;  /* Size for larger diamond pattern */
+  pointer-events: none;
+  z-index: -1;
+}
+
   h1, h2, h3, p {
     margin: 0;
   }
