@@ -15,13 +15,76 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(90deg, #8B0FF9 0%, #B818F4 100%);
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'ISOCTEUR', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Gujarati Kurta Pattern Overlay */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      45deg,
+      transparent 45%,
+      rgba(255,255,255,0.03) 45%,
+      rgba(255,255,255,0.03) 55%,
+      transparent 55%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 45%,
+      rgba(255,255,255,0.03) 45%,
+      rgba(255,255,255,0.03) 55%,
+      transparent 55%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 48%,
+      rgba(255,255,255,0.01) 48%,
+      rgba(255,255,255,0.01) 52%,
+      transparent 52%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 48%,
+      rgba(255,255,255,0.01) 48%,
+      rgba(255,255,255,0.01) 52%,
+      transparent 52%
+    );
+  background-size: 
+    15px 15px,
+    15px 15px,
+    15px 15px,
+    30px 30px,
+    30px 30px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+* {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
