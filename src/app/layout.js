@@ -17,9 +17,13 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <BubblesBackground />
+        <div className="layout-container">
+          <main className="main-content">
+            {children}
+          </main>
+        </div>
         <Scrollbar />
         <CustomCursor />
-        <main>{children}</main>
       </body>
     </html>
   );

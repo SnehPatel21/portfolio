@@ -4,7 +4,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #171717;  
+  --scrollbar-width: 100px;
+  --content-max-width: 1400px;
+  --content-padding: 2rem;
+  --footer-height: 80px;
+  --scrollbar-margin: 80px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,6 +27,8 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-family: 'ISOCTEUR', sans-serif;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -87,4 +94,85 @@ body::before {
 * {
   -ms-overflow-style: none !important;
   scrollbar-width: none !important;
+}
+
+/* Main layout container */
+.layout-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-right: var(--scrollbar-width);
+  width: calc(100% - var(--scrollbar-width));
+  margin: 0 auto;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.custom-scrollbar {
+  --scrollbar-right-space: 1.5rem; /* Default space from right */
+}
+@media (max-width: 1400px) {
+  :root {
+    --scrollbar-width: 80px;
+    --content-padding: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --scrollbar-width: 60px;
+    --content-padding: 1.25rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .custom-scrollbar {
+    --scrollbar-right-space: 0.5rem; /* Reduce space for medium tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --scrollbar-width: 40px;
+    --content-padding: 1rem;
+    --footer-height: 60px;
+    --scrollbar-margin: 60px;
+  }
+  .layout-container {
+    width: 100%; /* Full width on tablets */
+  }
+  
+  .footerContent {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .custom-scrollbar {
+    --scrollbar-right-space: 0.25rem; /* Minimal space for smaller tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --scrollbar-width: 0;
+    --content-padding: 0.75rem;
+    --footer-height: 50px;
+    --scrollbar-margin: 50px;
+  }
+  .custom-scrollbar {
+    display: none;
+  }
+  .container {
+    width: calc(100% - 2rem);
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
 }

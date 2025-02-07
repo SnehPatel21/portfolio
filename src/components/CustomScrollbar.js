@@ -46,7 +46,15 @@ const DynamicScrollbar = () => {
   }, []);
 
   return (
-    <div className="fixed right-6 w-20 pointer-events-none" style={{ top: '5%', height: '90%' }}>
+    <div 
+    className="custom-scrollbar fixed w-20 pointer-events-none"
+    style={{ 
+      top: 'var(--scrollbar-margin)',
+      height: 'calc(100vh - (var(--scrollbar-margin) * 2))',
+      right: 'var(--scrollbar-right-space)',
+      zIndex: 40
+    }}
+  >
       {/* Track */}
       <div className="absolute right-9 h-full w-3">
         {/* Track Container */}

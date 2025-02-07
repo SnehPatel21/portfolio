@@ -1,23 +1,23 @@
 .section {
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 4rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   font-family: 'ISOCTEUR', monospace;
-  overflow: hidden; /* Added to prevent potential blur overflow */
+  overflow: visible; /* Added to prevent potential blur overflow */
 }
 
 .container {
-  width: 100%;
+  width: min(100% - 4rem, var(--content-max-width));
   max-width: 1400px;
   margin: 0 auto;
   background: linear-gradient(180deg, rgba(217, 217, 217, 0.67) 0%, rgba(217, 217, 217, 0.33) 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 24px;
-  padding: 3rem;
+  padding: 3rem var(--content-padding);
   position: relative;
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
