@@ -1,46 +1,19 @@
 .heroSection {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   overflow: hidden;
-  /* Removed the background gradient */
-}
-
-/* Background Elements */
-.backgroundElements {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.ellipse1Wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 25%;
-  aspect-ratio: 1;
-}
-
-.ellipse2Wrapper {
-  position: absolute;
-  bottom: 10%;
-  right: 45%;
-  width: 15%;
-  aspect-ratio: 1;
-}
-
-.ellipse1, .ellipse2 {
-  object-fit: contain;
+  z-index: 1;
 }
 
 /* Main Container */
 .container {
   position: relative;
-  width: 100%;
+  width: min(100% - 4rem, var(--content-max-width));
   max-width: 1400px;
   display: flex;
   gap: 4rem;
@@ -51,6 +24,8 @@
   -webkit-backdrop-filter: blur(10px);
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  will-change: transform, opacity;
+  transform-origin: center center;
 }
 
 /* Right Content */
@@ -65,6 +40,7 @@
   -webkit-backdrop-filter: blur(4px);
   padding: 2rem;
   border-radius: 16px;
+  will-change: transform;
 }
 
 /* Navigation */
@@ -80,11 +56,8 @@
   text-decoration: none;
   font-family: 'ISOCTEUR', sans-serif;
   font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.nav a:hover {
-  color: #9d3ffb;
+  transition: all 0.3s ease;
+  will-change: transform, color;
 }
 
 /* Image Container */
@@ -94,10 +67,11 @@
   aspect-ratio: 4/3;
   border-radius: 16px;
   overflow: hidden;
+  will-change: transform;
 }
 
 .heroImage {
-  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 /* Left Content */
@@ -107,6 +81,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
+  will-change: transform;
 }
 
 .logo {
@@ -140,6 +115,7 @@
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
+  will-change: transform;
 }
 
 .ctaButton:hover {
@@ -157,10 +133,6 @@
 
   .content, .sidebar {
     max-width: 100%;
-  }
-
-  .ellipse1Wrapper {
-    width: 35%;
   }
 }
 
@@ -185,14 +157,6 @@
 
   .imageWrapper {
     aspect-ratio: 16/9;
-  }
-
-  .ellipse1Wrapper {
-    width: 50%;
-  }
-
-  .ellipse2Wrapper {
-    width: 25%;
   }
 }
 
