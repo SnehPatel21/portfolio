@@ -12,9 +12,9 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <ProcessSection />
-      <ProjectsSection />
       <SkillsSection />
+      <ProjectsSection />
+      <ProcessSection />
       <JourneySection/>
       <ContactSection/>
       <Footer/>
